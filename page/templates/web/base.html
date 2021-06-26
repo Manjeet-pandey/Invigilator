@@ -1,21 +1,27 @@
 <!doctype html>
 <html lang="en">
-  
+
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
 <head>
-  	<title>{% block title %}Tribhuvan University{% endblock %}</title>
+    <title>{% block title %}Tribhuvan University{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    {% load static %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-  <body>
-    
-    {% block content %}
-    {% endblock %}
-      </body>
-      </html>
-    
-		
+
+<body>
+    <div class="logo-container">
+        <h1><img src="{% static 'img/lolo.png' %}" alt="Tribhuvan University" class="logo"></h1>
+
+        <h1>
+            Tribhuvan University
+        </h1>
+    </div>
+
+    {% block content %} {% endblock %}
+</body>
+
+</html>

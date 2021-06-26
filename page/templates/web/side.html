@@ -1,22 +1,24 @@
-{% extends 'web/base.html' %}
-<!-- <!doctype html>
+{%extends "web/base.html"%}
+<!-- 
+<!doctype html>
 <html lang="en">
-  
+
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
 <head>
-  	<title>Tribhuvan University</title>
+    <title>{% block title %}Tribhuvan University{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    {% load static %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-  <body>
-		 -->
-     {% block content %}
-		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar" class="active">
+
+<body> -->
+{% block content%}
+
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="active">
         <!-- <h1><img src="{% static 'img/lolo.png' %}" alt="Tribhuvan University"  class="logo"></h1> -->
         <button type="button" id="sidebarCollapse" class="btn btn-primary">
           <i class="fa fa-bars"></i>
@@ -27,48 +29,51 @@
         </button>
 
         <ul class="list-unstyled components mb-5">
-          <li class="active">
-            <a href="#"><span class="fa fa-home"></span> Home</a>
-          </li>
-          <li>
-              <a href="#"><span class="fa fa-user"></span> Profile</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-sticky-note"></span> Schedule</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-cogs"></span> Contacts</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-paper-plane"></span> Log Out</a>
-          </li>
+            <li class="active">
+                <a href="#"><span class="fa fa-home"></span> Home</a>
+            </li>
+            <li>
+                <a href="profile.html"><span class="fa fa-user"></span> Profile</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa fa-sticky-note"></span> Schedule</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa fa-cogs"></span> Contacts</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa fa-paper-plane"></span> Log Out</a>
+            </li>
         </ul>
 
-      
-    	</nav>
 
-        <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5">
-       
-          <div class="logo-container">
-          <h1><img src="{% static 'img/lolo.png' %}" alt="Tribhuvan University"  class="logo"></h1>
-       
-        <h1>
-          Tribhuvan University
-        </h1>
-      </div>
-        
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5">
+
+        <!-- <div class="logo-container">
+            <h1><img src="{% static 'img/lolo.png' %}" alt="Tribhuvan University" class="logo"></h1>
+
+            <h1>
+                Tribhuvan University
+            </h1>
+        </div> -->
+
         <div>
-        <h2 class="mb-4">Fuck this System</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-		</div>
+            <h2 class="mb-4">Fuck this System</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
     {% load static %}
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/popper.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"65c31071ae94a773","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.5.2","si":10}'></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"65c31071ae94a773","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.5.2","si":10}'></script>
 
-{% endblock %}
+</div>
+{%endblock%}
