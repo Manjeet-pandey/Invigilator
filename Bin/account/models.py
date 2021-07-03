@@ -4,10 +4,18 @@ from django.db.models.aggregates import Max
 #phone number
 from django.core.validators import MinLengthValidator
 from phonenumber_field.modelfields import PhoneNumberField
+from django.contrib.auth.models import AbstractUser
 #from django import forms
 #from typing_extensions import Required
 
 # Create your models here.
+# class User(AbstractUser):
+#     USER_TYPE_CHOICES = (
+#         (1, 'student'),
+#         (2, 'staff'),
+#         (3, 'teacher'),
+#     )
+#     user_type = models.PositiveSmallIntegerField(choices=USER_TYPE_CHOICES)
 
 
 class Teacher(models.Model):
@@ -61,3 +69,4 @@ class Student(models.Model):
 #     question = models.ForeignKey(Question, on_delete=models.CASCADE)
 #     choice_text = models.CharField(max_length=200)
 #     votes = models.IntegerField(default=0)
+

@@ -12,15 +12,12 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = Person
         fields = ["category", "first_Name", "middle_Name", "last_Name",
-                  "email_Id", "dob", "gender", "phone_Num", "photo"]
-        #model.save()
+                  "dob", "gender", "phone_Num", "photo"]
+
     # REQUIRED_FIELDS = ["category", "first_Name", "last_Name",
-    #                    "email", "dob", "gender", "phone_Num", "photo"]
-
-# class LoginForm(UserCreationForm):
-#     class Meta:
-        
-
+    #                    "dob", "gender", "phone_Num", "photo"]
+ 
+ 
     # def StaffForm():
     #     class Meta:
     #         model = Teacher
