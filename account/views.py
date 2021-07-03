@@ -13,8 +13,11 @@ def register(respone):
         if form.is_valid():
             form.save()
             return response.HttpResponse()
-        return redirect("/profile/1")
+        return redirect("/home")
     else:
-        form=RegisterForm(response)
+        form=RegisterForm()
     
     return render(respone, "register/register.html", {"form":form})
+
+# def login(response):
+#     return render(response,"registration/login.html")

@@ -10,6 +10,8 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class Person(models.Model):
 
+    USERNAME_FIELD = 'email'
+
     CATEGORY_CHOICES = [
         ('T', 'Teacher'),
         ('S', 'Staff'),

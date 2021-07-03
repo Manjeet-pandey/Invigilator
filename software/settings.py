@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'phonenumber_field',
 
-    #added for AUTH_USER_MODEL
-    #'account.forms.RegisterForm'
 ]
 
 MIDDLEWARE = [
@@ -133,6 +131,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL =''
+CRISPY_TEMPLATE_PACK="bootstrap4"
 
-#AUTH_USER_MODEL = 'account.forms.RegisterForm'
+LOGIN_REDIRECT_URL ='/profile/1'
+
