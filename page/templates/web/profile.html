@@ -1,13 +1,18 @@
-{% extends 'web/base.html' %} {%block title %} View Teachers {% endblock %}{% block content %}
+{% extends "web/base.html" %} {%block title %} Profile {% endblock %} {% block content %} {%include "web/side.html"%}
+
+<h3>
+    {{comtext.last_Name}}
+</h3>
 <div>
-    {% if value %}
-    <ul>
-        {% for teacher in value %}
-        <li><a href="/page/{{ teacher.id }}/">{{ teacher.first_Name }}</a></li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p>No Teachers list.</p>
-    {% endif %}
+    <p>{{context.first_Name}}</p>
+    <p>{{context.middle_Name}}</p>
+    <p>{{context.last_Name}}</p>
+    <p>{{context.email_Id}}</p>
+    <p>{{context.dob}}</p>
+    <p>{{context.gender}}</p>
+    <p>{{context.phone_Num}}</p>
+    <p>{{context.photo}}</p>
+
 </div>
+
 {% endblock %}

@@ -1,9 +1,9 @@
-# from django.contrib import admin
+from django.contrib import admin
 
-# from .models import Teacher, Staff, Student
+from .models import Person
 
-# admin.site.register(Teacher)
-# admin.site.register(Student)
-# admin.site.register(Staff)
+admin.site.register(Person)
+#admin.site.register(Teacher)
+
 
 

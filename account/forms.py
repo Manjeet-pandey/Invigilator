@@ -15,14 +15,14 @@ class RegisterForm(ModelForm):
             fields = ["first_Name", "middle_Name", "last_Name", "dob", "phone_Num", "gender",
                     "qualification", "photo", "email_Id"]
     
-    def StaffForm():
-        class Meta:
-            models = Teacher
-            fields = ["first_Name", "middle_Name", "last_Name", "dob", "phone_Num", "gender",
-                      "qualification", "photo", "email_Id"]
+    # def StaffForm():
+    #     class Meta:
+    #         model = Teacher
+    #         fields = ["first_Name", "middle_Name", "last_Name", "dob", "phone_Num", "gender",
+    #                   "qualification", "photo", "email_Id"]
 
-    def StudentForm():
-        class Meta:
-            models = Teacher
-            fields = ["first_Name", "middle_Name", "last_Name", "dob", "phone_Num", "gender",
-                      "qualification", "photo", "email_Id"]
+    # def StudentForm():
+    #     class Meta:
+    #         model = Teacher
+    #         fields = ["first_Name", "middle_Name", "last_Name", "dob", "phone_Num", "gender",
+    #                   "qualification", "photo", "email_Id"]
