@@ -1,0 +1,23 @@
+---------account registration--------------
+
+<!-- <div>
+{% if value %}
+<ul>
+    {% for teacher in value %}
+    <li><a href="/page/{{ teacher.id }}/">{{ teacher.first_Name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No Teachers list.</p>
+{% endif %}
+</div> -->
+
+---------------page profie display------------
+   
+{% for item in context.teacher_set.all()%}
+
+{% endfor %}
+
+
+
+

@@ -1,5 +1,8 @@
 from django.db import models
 from django.db.models.aggregates import Max
+
+#phone number
+from django.core.validators import MinLengthValidator
 from phonenumber_field.modelfields import PhoneNumberField
 #from django import forms
 #from typing_extensions import Required
@@ -9,16 +12,21 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class Teacher(models.Model):
     first_Name = models.CharField(max_length=50)
-    middle_Name = models.CharField(max_length=50, blank=True)
-    last_Name = models.CharField(max_length=50)
-    email_Id = models.EmailField('email_Id', blank=True)
-    dob = models.DateField('dob', blank=True)
-    phone_Num = PhoneNumberField(name = 'phone_Num', blank=True)
-    gender = models.BooleanField('gender', blank=True)
-    phone_Num = models.CharField(max_length=10,name='phone_Num')
-    gender = models.BooleanField('gender', blank=True)
-    highest_Qualification = models.CharField(max_length=50, name='qualification', blank=True)
-    photo = models.ImageField('photo', blank=True)
+    middle_Name = models.CharField('middle_Name', max_length=50)
+    last_Name = models.CharField('last_Name', max_length=50)
+    email_Id = models.EmailField('email_Id')
+    dob = models.DateField('dob')
+    #phone_Num = PhoneNumberField(name = 'phone_Num', blank=True)
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('N', 'Others'),
+    )
+    gender = models.CharField('gender', max_length=1, choices=GENDER_CHOICES),
+    phone_Num = models.CharField('phone_Num', max_length=10, validators=[
+        MinLengthValidator(10)])
+    photo = models.ImageField('photo')
+
     #profileId = last_Name+first_Name
 
 
