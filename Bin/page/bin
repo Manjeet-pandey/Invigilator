@@ -19,5 +19,9 @@
 {% endfor %}
 
 
-
+    <!-- {% if context.category == 'T' %}
+    <p>Teacher</p>
+    {% elif context.category=='S' %}
+    <p>Staff</p> {% else %}
+    <p>Student</p> {% endif %} -->
 

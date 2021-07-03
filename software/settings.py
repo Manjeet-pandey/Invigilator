@@ -38,10 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'page',
-    'account',
+    'page.apps.PageConfig',
+    'account.apps.AccountConfig',
     'crispy_forms',
     'phonenumber_field',
+
+    #added for AUTH_USER_MODEL
+    #'account.forms.RegisterForm'
 ]
 
 MIDDLEWARE = [
@@ -131,3 +134,5 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL =''
+
+#AUTH_USER_MODEL = 'account.forms.RegisterForm'
