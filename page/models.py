@@ -10,11 +10,11 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class Person(models.Model):
 
-    CATEGORY_CHOICES = (
+    CATEGORY_CHOICES = [
         ('T', 'Teacher'),
         ('S', 'Staff'),
         ('O', 'Other'),
-    )
+    ]
     category = models.CharField('category', max_length=1, choices=CATEGORY_CHOICES)
 
     first_Name = models.CharField(max_length=50)
@@ -22,24 +22,27 @@ class Person(models.Model):
     last_Name = models.CharField('last_Name', max_length=50)
     email_Id = models.EmailField('email_Id')
     dob = models.DateField('dob')
-    phone_Num = PhoneNumberField(name = 'phone_Num', blank=True)
-    GENDER_CHOICES = (
+    #phone_Num = PhoneNumberField(name = 'phone_Num', blank=True)
+    GENDER_CHOICES = [
         ('M', 'Male'),
         ('F', 'Female'),
         ('N', 'Others'),
-    )
-    gender = models.CharField('gender', max_length=1, choices=GENDER_CHOICES),
+    ]
+    gender = models.CharField('gender', max_length=1, choices=GENDER_CHOICES)
     phone_Num = models.CharField('phone_Num', max_length=10, validators=[MinLengthValidator(10)])
     photo = models.ImageField('photo', upload_to='image_Uploads')
 
     if category=='S':
         field = models.CharField(max_length=15, name='field')
+    elif category=='T':
+        highest_Qualification = models.CharField(
+            max_length=50, name='qualification')
+    elif category=='O':
+        highest_Qualification = models.CharField(
+            max_length=50, name='qualification')
+        college = models.CharField(max_length=20, name='college')
     else:
-        if category=='T':
-            highest_Qualification = models.CharField(
-                max_length=50, name='qualification')
-        else:
-            college = models.CharField(max_length=20, name='college')
+        pass
 
     def __str__(self):
         return self.last_Name

@@ -1,9 +1,11 @@
 {% extends "web/base.html" %} {%block title %} Profile {% endblock %} {% block content %} {%include "web/side.html"%}
 
 <h3>
-    {{comtext.last_Name}}
+    {{context.last_Name}}
 </h3>
 <div>
+
+    <p>{{context.category}}</p>
     <p>{{context.first_Name}}</p>
     <p>{{context.middle_Name}}</p>
     <p>{{context.last_Name}}</p>
