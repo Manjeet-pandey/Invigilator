@@ -25,3 +25,9 @@
     <p>Staff</p> {% else %}
     <p>Student</p> {% endif %} -->
 
+----------------------base.html---------------------------
+
+{% if user.is_authenticated %} 
+{% else %}
+<p> Login <a href="../login/">here</a></p>
+{% endif %}

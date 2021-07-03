@@ -1,7 +1,8 @@
-{% extends "web/base.html"%} {% block title%}Login Page{% endblock %} {% load crispy_forms_tags %} {% block content %}
+{% extends 'web/base.html' %} {% block title %}Login Page {% endblock %} {% load crispy_forms_tags %} {% block content %}
 <form method="POST" class="form-group">
     {% csrf_token %} {{form|crispy}}
+    <p>Create new Account <a href="/register">here</a></p>
     <button type="submit" class="btn btn-success">Login</button>
-    <p>Create New Account <a href="account/signup">here</a></p>
+
 </form>
 {% endblock %}
