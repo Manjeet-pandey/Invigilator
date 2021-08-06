@@ -24,7 +24,7 @@ class Person(AbstractUser):
     # last_Name = models.CharField('last_Name', max_length=50)
     
     email_Id = models.EmailField('email_Id', unique=True,blank=True)
-    dob = models.DateField('dob')
+    dob = models.DateField('dob', null=True)
     #phone_Num = PhoneNumberField(name = 'phone_Num', blank=True)
     GENDER_CHOICES = [
         ('M', 'Male'),
@@ -49,18 +49,6 @@ class Person(AbstractUser):
    
     def __str__(self):
         return self.username
-
-class MyUserManager(BaseUserManager):
-
-    def create_superuser(self, username, password=None):
-        user = self.model(
-            username=username
-        )
-        user.is_admin = True
-        print(password)
-        user.set_password(password)
-        user.save(using=self._db)
-        return user
 
 
 # class Teacher(models.Model):

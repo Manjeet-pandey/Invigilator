@@ -13,14 +13,14 @@ def register(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
         if form.is_valid():
-            
             form.save()
             return response.HttpResponse()
+        
         # else:
         #     print(form)
         #     print(form.errors)
             
-        # return redirect("register")
+        return redirect("login")
     else:
         form=RegisterForm()
     
