@@ -45,5 +45,5 @@ def profile_id(request):
     current_user = request.user
     print("Profile Id is : ", +current_user.id)
     id = current_user.id
-    profile(response,id )
+    return redirect('profile',id)
 
