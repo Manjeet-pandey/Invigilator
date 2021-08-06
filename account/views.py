@@ -16,11 +16,11 @@ def register(request):
             
             form.save()
             return response.HttpResponse()
-        else:
-            print(form)
-            print(form.errors)
+        # else:
+        #     print(form)
+        #     print(form.errors)
             
-        return redirect("register/login.html")
+        # return redirect("register")
     else:
         form=RegisterForm()
     

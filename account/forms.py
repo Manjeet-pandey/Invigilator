@@ -13,7 +13,7 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = Person
         fields = [ "username" ,"first_name" ,"last_name","email_Id",
-                  "dob", "gender", "phone_Num","password1","password2"]
+                  "dob", "gender", "phone_Num","photo","password1","password2"]
 
         # REQUIRED_FIELDS = ["first_Name", "last_Name","e,ail"
         #               "dob", "gender", "phone_Num", "photo"]

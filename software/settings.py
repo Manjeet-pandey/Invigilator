@@ -137,3 +137,5 @@ LOGIN_REDIRECT_URL ='/profile_id/'
 LOGOUT_REDIRECT_URL = '/home'
 AUTH_USER_MODEL = "page.Person"
 
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

@@ -1,9 +1,10 @@
+
 from django.db import models
 from django.db.models.aggregates import Max
 
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser,BaseUserManager
 #from django import forms
-#from typing_extensions import Required
+
 
 # Create your models here.
 
@@ -32,7 +33,7 @@ class Person(AbstractUser):
     ]
     gender = models.CharField('gender', max_length=1, choices=GENDER_CHOICES)
     phone_Num = models.CharField('phone_Num', max_length=10,)
-    photo = models.ImageField('photo', upload_to='image_Uploads')
+    photo = models.ImageField('photo', upload_to='image_Uploads',blank=True)
    # password = models.CharField('password', max_length=50)
     # if category=='S':
     #     field = models.CharField(max_length=15, name='field')
@@ -47,7 +48,20 @@ class Person(AbstractUser):
     #     pass
    
     def __str__(self):
-        return self.last_name
+        return self.username
+
+class MyUserManager(BaseUserManager):
+
+    def create_superuser(self, username, password=None):
+        user = self.model(
+            username=username
+        )
+        user.is_admin = True
+        print(password)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
 
 # class Teacher(models.Model):
 #     person = models.ForeignKey(Person, on_delete=models.CASCADE)
