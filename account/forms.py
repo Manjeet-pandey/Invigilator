@@ -15,6 +15,11 @@ class RegisterForm(UserCreationForm):
         fields = [ "username" ,"first_name" ,"last_name","email_Id",
                   "dob", "gender", "phone_Num","photo","password1","password2"]
 
+        def __init__(self, *args, **kwargs):
+            super(RegisterForm, self).__init__(*args, **kwargs)
+            self.fields['photo'].required = False
+
+
         # REQUIRED_FIELDS = ["first_Name", "last_Name","e,ail"
         #               "dob", "gender", "phone_Num", "photo"]
  

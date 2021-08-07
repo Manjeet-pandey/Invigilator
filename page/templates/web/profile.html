@@ -5,15 +5,16 @@
 </h3>
 <div>
 
-    <p>{{context.category}}</p>
-    <p>{{context.first_Name}}</p>
-    <p>{{context.middle_Name}}</p>
-    <p>{{context.last_Name}}</p>
-    <p>{{context.email_Id}}</p>
-    <p>{{context.dob}}</p>
-    <p>{{context.gender}}</p>
-    <p>{{context.phone_Num}}</p>
-    <p>{{context.photo}}</p>
+    <!-- <p>{{context.category}}</p> -->
+    <p>
+        <img src="{{context.photo.url}}">
+    </p>
+    <p>Name: {{context.first_name}} {{context.last_name}}</p>
+    <!-- <p>{{context.middle_name}}</p> -->
+    <p>Email: {{context.email_Id}}</p>
+    <p>DOB: {{context.dob}}</p>
+    <p>Gender: {{context.gender}}</p>
+    <p>Contact No: {{context.phone_Num}}</p>
 
 </div>
 
