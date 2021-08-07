@@ -4,6 +4,7 @@ from django.db import models
 from django.db.models.aggregates import Max
 from django import forms
 from django.contrib.auth.models import AbstractUser,BaseUserManager
+from django.forms import widgets
 #from django import forms
 
 
@@ -36,17 +37,23 @@ class Person(AbstractUser):
     phone_Num = models.CharField('phone_Num', max_length=10,)
     photo = models.ImageField('photo', upload_to='image_Uploads')
    # password = models.CharField('password', max_length=50)
-    # if category=='S':
-    #     field = models.CharField(max_length=15, name='field')
-    # elif category=='T':
-    #     highest_Qualification = models.CharField(
-    #         max_length=50, name='qualification')
-    # elif category=='O':
-    #     highest_Qualification = models.CharField(
-    #         max_length=50, name='qualification')
-    #     college = models.CharField(max_length=20, name='college')
-    # else:
-    #     pass
+    # qualification = models.CharField(max_length=15,widgets=forms.HiddenInput(),required=False, name='qualification
+    # ')
+    # def categ(category):
+    #     if category=='S':
+            
+        #     return  models.CharField(max_length=15, name='field')
+        # elif category=='T':
+        #    return  models.CharField(
+        #         max_length=50, name='qualification')
+        # elif category=='O':
+        #     highest_Qualification = models.CharField(
+        #         max_length=50, name='qualification')
+        #     college = models.CharField(max_length=20, name='college')
+        # else:
+        #     pass
+    # field = models.CharField(max_length=15,default=categ(category))
+    
    
     def __str__(self):
         return self.username
