@@ -11,7 +11,7 @@ def index(request):
     #     'Hello World'
     # }
     #return HttpResponse(template.render(context,request))
-    return render(request, 'web/home.html')
+    return render(request, 'web/index.html')
 
 def profile(response, id):
     # current_user = request.user
@@ -25,7 +25,7 @@ def profile(response, id):
         "first_name":person_list.first_name,
         
         "last_name":person_list.last_name,
-        "email_Id": person_list.email_Id,
+        "email": person_list.email,
         "dob":person_list.dob,
         "phone_Num":person_list.phone_Num,
         "gender":person_list.gender,
