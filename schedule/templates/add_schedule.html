@@ -1,0 +1,6 @@
+{% extends "web/base.html" %} {% block title %}Register Schedult {% endblock %} {% load crispy_forms_tags %}{% block content %}{%include "web/side.html"%} 
+<form method="POST" class="form-group" ">
+    {% csrf_token %} {{form|crispy}}
+    <button type="submit" class="btn btn-success">Request Time</button>
+</form>
+{% endblock %}

@@ -19,6 +19,7 @@ from django.urls import path,include
 #direct implementation
 from account import views as av
 # from page import views as pv
+from schedule import views as sc
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,5 @@ urlpatterns = [
     path('',include('page.urls')),
     path('register/', av.register, name="register"),
     path('', include("django.contrib.auth.urls")),
+    path('schedule/',include('schedule.urls'))
 ]

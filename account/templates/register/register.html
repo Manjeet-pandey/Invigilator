@@ -1,7 +1,14 @@
 {% extends "web/base.html" %} {% block title %}Create an Account {% endblock %} {% load crispy_forms_tags %} {% block content %}
+<form method="POST" class="form-group" enctype="multipart/form-data">
+    {% csrf_token %} {{form|crispy}}
+    <button type="submit" class="btn btn-success">Register</button>
+</form>
+{% endblock %}
+
+<!--
 
 
-<!-- <form method="POST" class="form-group">
+ <form method="POST" class="form-group">
     {% csrf_token %} {{form|crispy}}
     {% if form.errors %}
     {% for field in form %}
@@ -18,9 +25,9 @@
     {% endfor %}
 {% endif %}
     <button type="submit" class="btn btn-success">Register</button>
-</form> -->
+</form> 
   
-<h2>Sign up</h2>
+ <h2>Sign up</h2>
  <form method="post">
     {% csrf_token %}
     {% for field in form %}
@@ -37,5 +44,5 @@
     {% endfor %}
     <button type="submit">Sign up</button>
   </form>
- 
-{% endblock %}
+enctype="multipart/form-data"
+

@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'page.apps.PageConfig',
     'account.apps.AccountConfig',
     'crispy_forms',
-    'phonenumber_field',
+    'schedule'
+    
 
 ]
 

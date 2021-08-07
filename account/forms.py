@@ -1,3 +1,4 @@
+
 from page.models import Person
 from django.db import models
 from django import forms
@@ -14,9 +15,6 @@ class RegisterForm(UserCreationForm):
         model = Person
         fields = [ "username" ,"first_name" ,"last_name","email_Id",
                   "dob", "gender", "phone_Num","photo","password1","password2"]
-
-        # REQUIRED_FIELDS = ["first_Name", "last_Name","e,ail"
-        #               "dob", "gender", "phone_Num", "photo"]
  
  
     # def StaffForm():

@@ -19,6 +19,7 @@ def profile(response, id):
     # print("fuckkkkkkkkkkkkkkkk", id)
     person_list = Person.objects.get(id=id)
     print(person_list)
+
     context={
         
         "first_name":person_list.first_name,
@@ -28,6 +29,7 @@ def profile(response, id):
         "dob":person_list.dob,
         "phone_Num":person_list.phone_Num,
         "gender":person_list.gender,
+     
         # "photo":person_list.photo,
         # "field":person_list.field,
         # "highest_Qualification": person_list.highest_Qualification,

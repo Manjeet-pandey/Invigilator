@@ -1,20 +1,30 @@
-{% extends "web/base.html" %} {%block title %} Profile {% endblock %} {% block content %} {%include "web/side.html"%}
+{% extends "web/base.html" %}{%block title %}Profile{% endblock %} {% block content %}{% include "web/side.html" %}
 
-<h3>
-    {{context.last_Name}}
-</h3>
-<div>
 
-    <p>{{context.category}}</p>
-    <p>{{context.first_Name}}</p>
-    <p>{{context.middle_Name}}</p>
-    <p>{{context.last_Name}}</p>
-    <p>{{context.email_Id}}</p>
-    <p>{{context.dob}}</p>
-    <p>{{context.gender}}</p>
-    <p>{{context.phone_Num}}</p>
-    <p>{{context.photo}}</p>
+<style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      float:right;
+      top: -500px;
+      width: 40%;
+    }
 
-</div>
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
 
-{% endblock %}
+    .container {
+      padding: 2px 16px;
+    }
+    </style>
+<div class="card">
+    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:50%">
+    <div class="container">
+      <h4><b>{{context.first_name}}</b></h4>
+      <p>Architect & Engineer</p>
+    </div>
+  </div>
+
+
+{%endblock%}

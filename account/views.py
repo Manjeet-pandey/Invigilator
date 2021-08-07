@@ -11,16 +11,18 @@ from .forms import RegisterForm
 
 def register(request):
     if request.method == "POST":
-        form = RegisterForm(request.POST)
+        form = RegisterForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return response.HttpResponse()
-        
-        # else:
-        #     print(form)
-        #     print(form.errors)
             
-        return redirect("login")
+            form.save()
+            return redirect("/login")
+
+        # else:
+            # print(form)
+            # print(form.errors)
+        redirect('register')
+            
+        
     else:
         form=RegisterForm()
     

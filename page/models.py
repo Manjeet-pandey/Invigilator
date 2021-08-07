@@ -1,7 +1,8 @@
 
+
 from django.db import models
 from django.db.models.aggregates import Max
-
+from django import forms
 from django.contrib.auth.models import AbstractUser,BaseUserManager
 #from django import forms
 
@@ -19,7 +20,7 @@ class Person(AbstractUser):
     # ]
     # category = models.CharField('category', max_length=1, choices=CATEGORY_CHOICES)
 
-    # #first_Name = models.CharField('first_Name',max_length=50)
+    # #first_Name = models.CharField('first_Name,max_length=50)
     # middle_Name = models.CharField('middle_Name', max_length=50)
     # last_Name = models.CharField('last_Name', max_length=50)
     
@@ -31,9 +32,9 @@ class Person(AbstractUser):
         ('F', 'Female'),
         ('N', 'Others'),
     ]
-    gender = models.CharField('gender', max_length=1, choices=GENDER_CHOICES)
+    gender = models.CharField('gender', max_length=1, choices=GENDER_CHOICES,blank=False)
     phone_Num = models.CharField('phone_Num', max_length=10,)
-    photo = models.ImageField('photo', upload_to='image_Uploads',blank=True)
+    photo = models.ImageField('photo', upload_to='image_Uploads')
    # password = models.CharField('password', max_length=50)
     # if category=='S':
     #     field = models.CharField(max_length=15, name='field')
