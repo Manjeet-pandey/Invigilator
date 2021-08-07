@@ -35,7 +35,7 @@ class Person(AbstractUser):
     ]
     gender = models.CharField('gender', max_length=1, choices=GENDER_CHOICES,blank=False)
     phone_Num = models.CharField('phone_Num', max_length=10,)
-    photo = models.ImageField('photo', upload_to='image_Uploads')
+    photo = models.ImageField('photo', upload_to='photo_Uploads', null=True, blank=True)
    # password = models.CharField('password', max_length=50)
     # qualification = models.CharField(max_length=15,widgets=forms.HiddenInput(),required=False, name='qualification
     # ')

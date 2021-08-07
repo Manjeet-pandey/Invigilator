@@ -1,9 +1,9 @@
 {% extends "web/base.html" %} {% block title %}Create an Account {% endblock %} {% load crispy_forms_tags %} {% block content %}
-<form method="POST" class="form-group" >
+<!-- <form method="POST" class="form-group" >
     {% csrf_token %} {{form|crispy}}
     <button type="submit" class="btn btn-success">Register</button>
-</form>
-{% endblock %}
+</form> -->
+
 
 <!--
 
@@ -25,24 +25,20 @@
     {% endfor %}
 {% endif %}
     <button type="submit" class="btn btn-success">Register</button>
-</form> 
-  
- <h2>Sign up</h2>
- <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
+</form> -->
+<div class="form-group">
+    <h2>Sign up</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %} {% for field in form %}
+        <p>
+            {{ field.label_tag }}<br> {{ field }} {% if field.help_text %}
+            <small style="color: grey">{{ field.help_text }}</small> {% endif %} {% for error in field.errors %}
+            <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </p>
         {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
-enctype="multipart/form-data"
+        <button type="submit">Sign up</button>
+    </form>
+</div>
 
+{% endblock %}

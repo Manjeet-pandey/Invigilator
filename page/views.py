@@ -29,8 +29,7 @@ def profile(response, id):
         "dob":person_list.dob,
         "phone_Num":person_list.phone_Num,
         "gender":person_list.gender,
-     
-        # "photo":person_list.photo,
+        "photo":person_list.photo,
         # "field":person_list.field,
         # "highest_Qualification": person_list.highest_Qualification,
         # "college":person_list.college,
