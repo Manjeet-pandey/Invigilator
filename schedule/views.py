@@ -3,13 +3,14 @@ from django.shortcuts import render,redirect
 from .models import Schedule
 from django.contrib import messages
 from .forms import Add_schedule
-
+import hashlib
 
 from django.contrib.auth import authenticate 
 
 # Create your views here.
 def schedule(request):
     scheduling = Schedule.objects.get(pk=1)
+   
     context={
         "title_name" : scheduling.title,
         "date": scheduling.date,
@@ -21,7 +22,7 @@ def schedule(request):
 def add_schedule(request):
     if request.method == "POST":
         form = Add_schedule(request.POST)
-       
+                
         if form.is_valid():
             
             schedule_form=form.save(commit=False)

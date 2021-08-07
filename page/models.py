@@ -25,7 +25,7 @@ class Person(AbstractUser):
     # middle_Name = models.CharField('middle_Name', max_length=50)
     # last_Name = models.CharField('last_Name', max_length=50)
     
-    email_Id = models.EmailField('email_Id', unique=True,blank=True)
+    #email_Id = models.EmailField('email_Id', unique=True,blank=True)
     dob = models.DateField('dob', null=True)
     #phone_Num = PhoneNumberField(name = 'phone_Num', blank=True)
     GENDER_CHOICES = [

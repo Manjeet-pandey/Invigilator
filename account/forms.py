@@ -13,7 +13,7 @@ from django.forms import ModelForm
 class RegisterForm(UserCreationForm):
     class Meta:
         model = Person
-        fields = [ "username" ,"first_name" ,"last_name","email_Id",
+        fields = [ "username" ,"first_name" ,"last_name","email",
                   "dob", "gender", "phone_Num","photo","password1","password2"]
 
         def __init__(self, *args, **kwargs):

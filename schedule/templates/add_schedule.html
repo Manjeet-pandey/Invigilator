@@ -1,6 +1,31 @@
-{% extends "web/base.html" %} {% block title %}Register Schedult {% endblock %} {% load crispy_forms_tags %}{% block content %}{%include "web/side.html"%} 
-<form method="POST" class="form-group" ">
-    {% csrf_token %} {{form|crispy}}
-    <button type="submit" class="btn btn-success">Request Time</button>
-</form>
+{% extends "web/base.html" %} {% block title %}Register Schedule {% endblock %} {% load crispy_forms_tags %}{% block content %}{%include "web/side.html"%}
+<div id="add-schedule">
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <h3>Request Invigilation</h3>
+    <br><br>
+
+    <form method="POST" class="form-group">
+        {% csrf_token %} {{form|crispy}}
+        <button type="submit " class="btn btn-success ">Request</button>
+    </form>
+    
+</div>
+
+<style>
+    #add-schedule {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 300px;
+        right: -500px;
+        top: -600px;
+    }
+</style>
+
 {% endblock %}

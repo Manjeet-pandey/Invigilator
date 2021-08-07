@@ -2,7 +2,7 @@
 from django.db import models
 from django.forms import ModelForm
 from django import forms
-from django.forms import Widget
+
 from page.models import Person
 
 # Create your models here.
@@ -15,7 +15,7 @@ class Schedule(models.Model):
     # current_user = request.user
     # id = current_user.id
     #user_id = models.CharField(max_length=10,null=True)
-    name = models.CharField(max_length=20, blank=True)
+    name = models.CharField(max_length=20)
     title = models.CharField(max_length=10,choices=TITLE_CHOICES)
     date = models.DateField('date') 
     time = models.TimeField('time')
