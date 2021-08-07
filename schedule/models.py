@@ -1,7 +1,10 @@
+
 from django.db import models
 from django.forms import ModelForm
-from django.db.models.fields import CharField
-from django.db.models.aggregates import Max
+from django import forms
+from django.forms import Widget
+from page.models import Person
+
 # Create your models here.
 TITLE_CHOICES = [
     ('M','Masters'),
@@ -9,7 +12,10 @@ TITLE_CHOICES = [
     ('E','Entrance'),
     ]
 class Schedule(models.Model):
-    
+    # current_user = request.user
+    # id = current_user.id
+    #user_id = models.CharField(max_length=10,null=True)
+    name = models.CharField(max_length=20, blank=True)
     title = models.CharField(max_length=10,choices=TITLE_CHOICES)
     date = models.DateField('date') 
     time = models.TimeField('time')

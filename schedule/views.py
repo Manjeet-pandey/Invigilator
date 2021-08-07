@@ -1,3 +1,4 @@
+from page.models import Person
 from django.shortcuts import render,redirect
 from .models import Schedule
 from django.contrib import messages
@@ -20,9 +21,12 @@ def schedule(request):
 def add_schedule(request):
     if request.method == "POST":
         form = Add_schedule(request.POST)
+       
         if form.is_valid():
             
-            form.save()
+            schedule_form=form.save(commit=False)
+            schedule_form.name = request.user
+            schedule_form.save()
             messages.success(request,"Schedule Added Successfully")
             return redirect("/schedule")
 
@@ -37,5 +41,6 @@ def add_schedule(request):
     
     return render(request, "add_schedule.html", {"form":form})
 
-
-    
+def get_id(request):
+    current_user = request.user
+    return current_user.id
