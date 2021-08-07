@@ -1,10 +1,50 @@
  {% extends "web/base.html" %} {%block title %} Home Page {% endblock %} {% block content %}
-<div>
-    <h2 class="mb-4">Fuck this System</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
+<style>
+div.notice {
+  margin: 50px;
+  float: right;
+  width:80%;
+  margin-right:50px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ccc;
+  
+  
+}
+div.desc:hover {
+  border: 1px solid #777;
+}
+.log-container{
+    align-items: center;
+    display: flex;
+    float:right;
+    margin-right:20px;
+    margin-top:20px;
+       
+}
+</style>
+ <div class="log-container">
+        {%load static%}
+        <h1><img src="{% static 'img/lolo.png' %}" alt="Tribhuvan University" class="logo"></h1>
+        <h1>
+            Tribhuvan University
+        </h1>
+    </div>
+<div class="notice">
+<ul style="list-style-type:none;">
+
+  <li><div class="desc">Notice detail here  Notice detail here  Notice detail here</div></li>
+
+{% comment %}   <div class="desc">Notice detail here</div>
+
+  <div class="desc">Notice detail here</div>
+
+  <div class="desc">Notice detail here</div> {% endcomment %}
+  </ul>
 </div>
+
 {%endblock%}
