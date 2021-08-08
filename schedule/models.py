@@ -1,5 +1,7 @@
 
 from django.db import models
+from django.db.models import query
+from django.db.models.fields import DateField
 from django.forms import ModelForm
 from django import forms
 
@@ -11,14 +13,16 @@ TITLE_CHOICES = [
     ('B','Bachelors'),
     ('E','Entrance'),
     ]
+
+
 class Schedule(models.Model):
     # current_user = request.user
     # id = current_user.id
     #user_id = models.CharField(max_length=10,null=True)
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20,blank=True)
     title = models.CharField(max_length=10,choices=TITLE_CHOICES)
-    date = models.DateField('date') 
-    time = models.TimeField('time')
+    date = models.CharField(max_length=30)
+    time = models.CharField('time', max_length=30)
 
     def __str__(self):
-        return self.title
+        return self.name

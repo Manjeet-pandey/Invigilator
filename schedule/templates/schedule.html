@@ -4,11 +4,24 @@
     <h3>
         My Schedules
     </h3><br><br>
+    {% if scheduling %}
+        {% for name in scheduling%}
+            <ul>
+                <li>
+                <div class="card">
+                    <h5>{{name.title}}</h5>
+                    <p>{{name.date}}</p>
+                    <p>{{name.time}}</p>
+                </div></li>
+            </ul>
+        {%endfor%}
+        
+    {%else%}
     <div class="card">
-        <h5>{{context.title_name}}</h5>
-        <p>{{context.date}}</p>
-        <p>{{context.time}}</p>
+        <h5>No Schedule available</h5>
+       
     </div>
+    {%endif%}
 
 </div>
 

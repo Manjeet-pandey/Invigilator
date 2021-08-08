@@ -11,21 +11,17 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
 def schedule(request):
-    scheduling = Schedule.objects.get(pk=1)
-   
-    context={
-        "title_name" : scheduling.title,
-        "date": scheduling.date,
-        "time": scheduling.time,
-
-    }
-    return render(request,"schedule.html",{'context':context})
+    name = request.user
+    scheduling = Schedule.objects.filter(name=request.user)
+    
+    
+    return render(request,"schedule.html",{'scheduling':scheduling})
 
 @login_required
 def add_schedule(request):
     if request.method == "POST":
         form = Add_schedule(request.POST)
-                
+        
         if form.is_valid():
             
             schedule_form=form.save(commit=False)
@@ -35,9 +31,9 @@ def add_schedule(request):
             return redirect("/schedule")
 
         # else:
-            # print(form)
-            # print(form.errors)
-        redirect('register')
+        #     print(form)
+        #     print(form.errors)
+        redirect('/schedule')
             
         
     else:
