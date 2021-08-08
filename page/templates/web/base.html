@@ -6,16 +6,34 @@
 <head>
     <title>{% block title %}Base{% endblock %}</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> {%load static%}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">{%load static%}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        .logo-container {
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
 
 
 </head>
 
 <body>
+
     <div class="logo-container">
-        <h1><img src="{% static 'img/lolo.png' %}" alt="Tribhuvan University" class="logo"></h1>
+        {%if user.is_authenticated%}
+        <a href="/home">
+            <h1><img src="{% static 'img/lolo.png' %}" class="logo"></h1>
+        </a>
+        {%else%}
+        <a href="/">
+            <h1><img src="{% static 'img/lolo.png' %}" class="logo"></h1>
+        </a>
+        {%endif%}
 
         <h1>
             Tribhuvan University

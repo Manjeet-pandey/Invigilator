@@ -1,4 +1,18 @@
  {% extends "web/base.html" %} {%block title %} Home Page {% endblock %} {% block content %}
+<style>
+    .login_icon {
+        position: relative;
+        float: right;
+        top: -100px;
+        right: 5rem;
+        font-size: large;
+    }
+    
+    .index_content {
+        position: relative;
+        top: 300px;
+    }
+</style>
 
 <div class="login_icon">
     <li>
@@ -9,14 +23,4 @@
 <div class="index_content">
     {%include "web/home_content.html"%}
 </div>
-
-<style>
-    .login_icon {
-        position: relative;
-        float: right;
-        top: -100px;
-        right: 5rem;
-        font-size: large;
-    }
-</style>
 {%endblock%}

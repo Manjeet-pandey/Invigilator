@@ -1,8 +1,20 @@
 {% extends 'web/base.html' %} {% block title %}Login Page {% endblock %} {% load crispy_forms_tags %} {% block content %}
-<form method="POST" class="form-group">
-    {% csrf_token %} {{form|crispy}}
-    <p>Create new Account <a href="/register">here</a></p>
-    <button type="submit" class="btn btn-success" >Login</button>
+<div id="login_form">
+    <form method="POST" class="form-group">
+        {% csrf_token %} {{form|crispy}}
+        <p>Create new Account <a href="/register">here</a></p>
+        <button type="submit" class="btn btn-success">Login</button>
 
-</form>
+    </form>
+</div>
+
+<style>
+    .form-group {
+        padding: 0px;
+    }
+    
+    #login_form {
+        margin-left: 100px;
+    }
+</style>
 {% endblock %}

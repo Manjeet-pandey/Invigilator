@@ -2005,6 +2005,7 @@ select.form-control:focus::-ms-value {
 .form-control-range {
     display: block;
     width: 100%;
+    height: inherit;
 }
 
 .col-form-label {
@@ -2076,6 +2077,7 @@ textarea.form-control {
 .form-group {
     margin-bottom: 1rem;
     width: 60%;
+    padding: 0px;
 }
 
 input {
@@ -2478,6 +2480,7 @@ textarea.form-control.is-invalid {
         -ms-flex-align: center;
         align-items: center;
         margin-bottom: 0;
+        padding: 0px;
     }
     .form-inline .form-control {
         display: inline-block;
@@ -10852,9 +10855,9 @@ h5,
 }
 
 #sidebar {
-    min-width: 270px;
-    max-width: 270px;
-    min-height: 495px;
+    min-width: 200px;
+    max-width: 250px;
+    min-height: 650px;
     background: #3e64ff;
     color: #fff;
     -webkit-transition: all 0.3s;

@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import handler404
 from django.contrib import admin
 from django.urls import path,include
 
@@ -25,6 +26,9 @@ from account import views as av
 # from page import views as pv
 from schedule import views as sc
 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('account/', include('account.urls')),
@@ -33,4 +37,6 @@ urlpatterns = [
     path('register/', av.register, name="register"),
     path('', include("django.contrib.auth.urls")),
     path('schedule/',include('schedule.urls'))
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)   # This line is for image upload
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # + staticfiles_urlpatterns()   # This line is for image upload
+
+# handler404 = 'page.views.error_404_view'

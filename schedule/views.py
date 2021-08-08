@@ -6,8 +6,10 @@ from .forms import Add_schedule
 import hashlib
 
 from django.contrib.auth import authenticate 
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def schedule(request):
     scheduling = Schedule.objects.get(pk=1)
    
@@ -19,6 +21,7 @@ def schedule(request):
     }
     return render(request,"schedule.html",{'context':context})
 
+@login_required
 def add_schedule(request):
     if request.method == "POST":
         form = Add_schedule(request.POST)
