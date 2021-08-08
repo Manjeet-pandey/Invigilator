@@ -45,5 +45,9 @@ def profile_id(request):
     id = current_user.id
     return redirect('profile',id)
 
+@login_required
+def contact(response):
+    return render(response, "web/contact.html")
+
 # def error_404_view(request,exception):
 #     return render(request, '404.html')
