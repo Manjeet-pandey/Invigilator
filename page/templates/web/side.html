@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> {% load static %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'css/navbar_style.css' %}"> -->
 
 <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar" class="active">
@@ -47,6 +47,8 @@
 
 <style>
     #sidebar {
+        position: relative;
+        top: -20px;
         min-width: 200px;
         max-width: 250px;
         min-height: 600px;
@@ -56,14 +58,45 @@
         -webkit-transition: all 0.3s;
         -o-transition: all 0.3s;
         transition: all 0.3s;
+        position: -webkit-sticky;
+        height: fixed;
+        background-color: #303030;
+    }
+    
+    #sidebar .aactive {
+        font-size: 10px;
+    }
+    
+    #sidebar ul li a {
+        border-bottom: 0px;
+    }
+    
+    #sidebar.active ul.components li a {
+        padding: 10px 0;
+    }
+    
+    #sidebar ul li a {
+        border-bottom: 0px;
     }
     
     .fa {
-        font-size: 30px;
+        font-size: 20px;
         padding-bottom: 0px;
     }
     
     #sidebar ul li a {
         border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .btn.btn-primary {
+        background: #303030;
+        border-color: #303030;
+        padding-top: 50px;
+    }
+    
+    .btn.btn-primary:hover,
+    .btn.btn-primary:focus {
+        background: #303030 !important;
+        border-color: #303030 !important;
     }
 </style>

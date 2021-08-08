@@ -128,7 +128,7 @@ body {
     padding: 10px 30px;
     display: block;
     color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0px;
 }
 
 #sidebar ul li a span {
@@ -192,8 +192,8 @@ header {
 }
 
 .logo {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
 }
 
 #content {

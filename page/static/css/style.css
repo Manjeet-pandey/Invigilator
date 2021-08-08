@@ -1600,7 +1600,7 @@ pre code {
 
 .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 0px;
 }
 
 .table tbody+tbody {
@@ -4999,7 +4999,7 @@ input[type="button"].btn-block {
     padding: 0.75rem 1.25rem;
     margin-bottom: 0;
     background-color: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-bottom: 0px solid rgba(0, 0, 0, 0.125);
 }
 
 .card-header:first-child {
@@ -6187,7 +6187,7 @@ a.close.disabled {
     color: #6c757d;
     background-color: rgba(255, 255, 255, 0.85);
     background-clip: padding-box;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 0px solid rgba(0, 0, 0, 0.05);
 }
 
 .toast-body {
@@ -6351,7 +6351,7 @@ a.close.disabled {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 1rem;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 0px solid #dee2e6;
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem;
 }
@@ -6682,7 +6682,7 @@ a.close.disabled {
 .bs-popover-auto[x-placement^="bottom"]>.arrow::after {
     top: 1px;
     border-width: 0 0.5rem 0.5rem;
-    border-bottom-color: #fff;
+    /* border-bottom-color: #fff; */
 }
 
 .bs-popover-bottom .popover-header::before,
@@ -6694,7 +6694,7 @@ a.close.disabled {
     width: 1rem;
     margin-left: -0.5rem;
     content: "";
-    border-bottom: 1px solid #f7f7f7;
+    border-bottom: 0px solid #f7f7f7;
 }
 
 .bs-popover-left,
@@ -6729,7 +6729,7 @@ a.close.disabled {
     margin-bottom: 0;
     font-size: 1rem;
     background-color: #f7f7f7;
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 0px solid #ebebeb;
     border-top-left-radius: calc(0.3rem - 1px);
     border-top-right-radius: calc(0.3rem - 1px);
 }
@@ -7175,7 +7175,7 @@ button.bg-dark:focus {
 }
 
 .border-bottom {
-    border-bottom: 1px solid #dee2e6 !important;
+    border-bottom: 0px solid #dee2e6 !important;
 }
 
 .border-left {
@@ -10758,7 +10758,7 @@ a {
     -webkit-transition: 0.3s all ease;
     -o-transition: 0.3s all ease;
     transition: 0.3s all ease;
-    color: #3e64ff;
+    color: #303030;
 }
 
 a:hover,
@@ -10855,10 +10855,12 @@ h5,
 }
 
 #sidebar {
+    position: relative;
+    top: -20px;
     min-width: 200px;
     max-width: 250px;
     min-height: 650px;
-    background: #3e64ff;
+    background: #303030;
     color: #fff;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -10947,7 +10949,7 @@ h5,
     padding: 10px 30px;
     display: block;
     color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0px;
 }
 
 #sidebar ul li a span {
@@ -11010,11 +11012,12 @@ header {
 .logo-container {
     align-items: center;
     display: flex;
+    top: auto;
 }
 
 .logo {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
 }
 
 #content {
@@ -11027,13 +11030,13 @@ header {
 }
 
 .btn.btn-primary {
-    background: #3e64ff;
-    border-color: #3e64ff;
+    background: #303030;
+    border-color: #303030;
     padding-top: 50px;
 }
 
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
-    background: #3e64ff !important;
-    border-color: #3e64ff !important;
+    background: #303030 !important;
+    border-color: #303030 !important;
 }
