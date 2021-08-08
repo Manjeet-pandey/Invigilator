@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
 def schedule(request):
-    scheduling = Schedule.objects.get(pk=1)
+    scheduling = Schedule.objects.get(id=2)
    
     context={
         "title_name" : scheduling.title,

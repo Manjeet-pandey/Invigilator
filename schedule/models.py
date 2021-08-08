@@ -15,7 +15,7 @@ class Schedule(models.Model):
     # current_user = request.user
     # id = current_user.id
     #user_id = models.CharField(max_length=10,null=True)
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, blank=True)
     title = models.CharField(max_length=10,choices=TITLE_CHOICES)
     date = models.DateField('date') 
     time = models.TimeField('time')

@@ -37,6 +37,6 @@ urlpatterns = [
     path('register/', av.register, name="register"),
     path('', include("django.contrib.auth.urls")),
     path('schedule/',include('schedule.urls'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # + staticfiles_urlpatterns()   # This line is for image upload
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # + staticfiles_urlpatterns()   # This line is for image upload
 
 # handler404 = 'page.views.error_404_view'
