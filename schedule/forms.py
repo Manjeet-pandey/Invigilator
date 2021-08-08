@@ -13,7 +13,7 @@ TIME_CHOICES = [
     ('8:00','8am')
 ]
 class Add_schedule(ModelForm):
-    date=forms.MultipleChoiceField(required=False,widget=forms.CheckboxSelectMultiple,choices=DATE_CHOICES)
+    date=forms.MultipleChoiceField(required=False,widget=forms.CheckboxSelectMultiple,choices=DATE_CHOICES,)
     time=forms.MultipleChoiceField(required=False,widget=forms.CheckboxSelectMultiple,choices=TIME_CHOICES)
     class Meta:
         model = Schedule
@@ -29,3 +29,10 @@ class Add_schedule(ModelForm):
         #         raise ValidationError("Name Already exists")
         #     return title
 
+class Update(ModelForm):
+    date=forms.MultipleChoiceField(required=False,widget=forms.CheckboxSelectMultiple,choices=DATE_CHOICES)
+    time=forms.MultipleChoiceField(required=False,widget=forms.CheckboxSelectMultiple,choices=TIME_CHOICES)
+    class Meta:
+        model = Schedule
+        fields =["title","date","time"]
+        

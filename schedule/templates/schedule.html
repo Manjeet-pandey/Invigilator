@@ -7,12 +7,21 @@
     {% if scheduling %}
         {% for name in scheduling%}
             <ul>
-                <li>
+                
+                <a href="/schedule/update/{{name.id}}">
                 <div class="card">
+                   
                     <h5>{{name.title}}</h5>
                     <p>{{name.date}}</p>
                     <p>{{name.time}}</p>
-                </div></li>
+                    <a href="/schedule/update/{{name.id}}">
+                    <button type="Update " class="btn btn-success" >Update</button>
+                    </a>
+                    <a href="/schedule/delete/{{name.id}}">
+                    <button type="Update " class="btn btn-success" >Delete</button>
+                </a>
+                </div>
+           
             </ul>
         {%endfor%}
         

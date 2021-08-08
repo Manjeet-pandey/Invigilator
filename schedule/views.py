@@ -1,8 +1,9 @@
+from django.http.response import HttpResponse
 from page.models import Person
 from django.shortcuts import render,redirect
 from .models import Schedule
 from django.contrib import messages
-from .forms import Add_schedule
+from .forms import Add_schedule, Update
 import hashlib
 
 from django.contrib.auth import authenticate 
@@ -16,6 +17,7 @@ def schedule(request):
     
     
     return render(request,"schedule.html",{'scheduling':scheduling})
+
 
 @login_required
 def add_schedule(request):
@@ -42,5 +44,30 @@ def add_schedule(request):
     return render(request, "add_schedule.html", {"form":form})
 
 def get_id(request):
-    current_user = request.user
-    return current_user.id
+   
+    return redirect('update_schedule',id)
+def del_schedule(request,id):
+    date = Schedule.objects.get(pk=id)
+    date.delete()
+    messages.success(request,"Schedule Deleted Successfully")
+    return redirect("/schedule/view")
+
+def update_schedule(request,id):
+    data = Schedule.objects.get(pk=id)
+    form = Update(instance=data)
+    if request.method == "POST":
+        scheduleadd = Update(request.POST, instance=data)
+       
+        if scheduleadd.is_valid():
+            scheduleadd.save()
+            messages.success(request,"Schedule Updated Successfully")
+            return redirect("/schedule/view")
+        else:
+            print(form)
+            print(form.errors)
+    return render(request, "update_schedule.html", {"form":form,
+    "data":data
+    })
+
+    
+
