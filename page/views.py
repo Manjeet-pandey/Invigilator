@@ -49,5 +49,7 @@ def profile_id(request):
 def contact(response):
     return render(response, "web/contact.html")
 
+
+
 # def error_404_view(request,exception):
 #     return render(request, '404.html')

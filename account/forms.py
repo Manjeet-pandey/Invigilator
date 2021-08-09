@@ -36,3 +36,10 @@ class RegisterForm(UserCreationForm):
     #         model = Teacher
     #         fields = ["first_Name", "middle_Name", "last_Name", "dob", "phone_Num", "gender",
     #                   "qualification", "photo", "email_Id"]
+
+# class Update_profile(ModelForm):
+    
+#     class Meta:
+#         model = Person
+#         fields = [ "username" ,"first_name" ,"last_name","email",
+#                   "dob", "gender", "phone_Num","photo","password1","password2"]

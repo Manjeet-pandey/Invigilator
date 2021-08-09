@@ -26,6 +26,28 @@
 {% endif %}
     <button type="submit" class="btn btn-success">Register</button>
 </form> -->
+<style>
+    .login_icon {
+        position: relative;
+        float: right;
+        top: -100px;
+        right: 5rem;
+        font-size: large;
+        color: #fff;
+    }
+    
+    .index_content {
+        position: relative;
+        top: 300px;
+    }
+</style>
+
+<div class="login_icon">
+    <li>
+        <a href="/login" style="color: #fff;"><span class="fa fa-user"></span> Login</a>
+    </li>
+</div>
+
 <div class="form-group">
     <h2>Sign up</h2>
     <form method="POST" enctype="multipart/form-data">
@@ -38,6 +60,7 @@
         </p>
         {% endfor %}
         <button type="submit">Sign up</button>
+        
     </form>
 </div>
 
