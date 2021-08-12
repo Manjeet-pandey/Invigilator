@@ -1,0 +1,65 @@
+{% extends "web/base.html" %}{%block title %}Profile{% endblock %} {% block content %}{% include "web/side.html" %}
+
+<div class="profile">
+    <!-- <p>{{context.category}}</p> -->
+    <div class="name_container">
+        <p>
+            <h3>Profile</h3>
+        </p>
+        <p><b>Name:</b> {{context.first_name}} {{context.last_name}}</p>
+        <!-- <p>{{context.middle_name}}</p> -->
+        <p><b>Email:</b> {{context.email}}</p>
+        <p><b>DOB:</b> {{context.dob}}</p>
+        <p><b>Gender:</b> {{context.gender}}</p>
+        <p><b>Contact No:</b> {{context.phone_Num}}</p>
+    </div>
+    <div class="card">
+
+        
+        <img src="{{context.photo.url}}" alt="Avatar" style="width:50%">
+        <div class="container">
+            <h4><b>{{context.first_name}}</b></h4>
+            <p>Engineer</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .profile {
+        position: relative;
+        top: 0px;
+        left: 10px;
+    }
+    
+    .name_container {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 300px;
+        right: -500px;
+        top: -600px;
+    }
+    
+    .card {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        float: right;
+        top: -850px;
+        width: 30%;
+        right: 300px;
+    }
+    
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .container {
+        padding: 2px 16px;
+    }
+</style>
+
+
+{%endblock%}

@@ -20,24 +20,23 @@ from django.urls import path,include
 #for image_Upload
 from django.conf import settings
 from django.conf.urls.static import static
-
+from scheduling import views as sc
 #direct implementation
-from account import views as av
-from page import views as pv
-from schedule import views as sc
 
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 
 urlpatterns = [
-    path('',pv.index,name='index'),
+    #path('',pv.index,name='index'),
     path('admin/', admin.site.urls),
+    path('',sc.index,name = 'index'),
     #path('account/', include('account.urls')),
-    path('profile/', include('page.urls')),
-    path('',include('page.urls')),
-    path('register/', av.register, name="register"),
+    #path('profile/', include('page.urls')),
+   # path('',include('page.urls')),
+    #path('register/', av.register, name="register"),
     path('', include("django.contrib.auth.urls")),
-    path('schedule/',include('schedule.urls'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # + staticfiles_urlpatterns()   # This line is for image upload
+    #path('schedule/',include('schedule.urls'))
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # + staticfiles_urlpatterns()   # This line is for image upload
 
 # handler404 = 'page.views.error_404_view'
