@@ -29,7 +29,7 @@ from scheduling import views as sc
 urlpatterns = [
     #path('',pv.index,name='index'),
     path('admin/', admin.site.urls),
-    path('',sc.index,name = 'index'),
+    path('index/',sc.select,name = 'index'),
     #path('account/', include('account.urls')),
     #path('profile/', include('page.urls')),
    # path('',include('page.urls')),

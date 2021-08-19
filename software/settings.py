@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     #'account.apps.AccountConfig',
     'crispy_forms',
     'import_export',
-    'rooms'
+    'rooms',
+    'exams'
     #'schedule'
     
 

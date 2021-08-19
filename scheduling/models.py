@@ -1,7 +1,8 @@
 from django.db import models
 from django import forms
 from django.contrib.auth.models import AbstractUser,BaseUserManager
-
+from rooms.models import Rooms
+from exams.models import Exam
 class Person(models.Model):
 
     first_Name = models.CharField('first_Name',max_length=50)
@@ -35,3 +36,10 @@ class Person(models.Model):
    
     def __str__(self):
         return self.first_Name
+
+class Selected_person(models.Model):
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
+    rooms_assigned = models.ForeignKey(Rooms, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.person.first_Name
