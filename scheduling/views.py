@@ -6,6 +6,8 @@ from rooms.models import Rooms
 from .forms import SelectForm
 import random
 def select(response):
+    record = Selected_person.objects.all()
+    record.delete()
     list = Person.objects.all().order_by('?')[:10]
     dates = Exam.objects.all()
     kotha = Rooms.objects.all()

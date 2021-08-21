@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'import_export',
     'rooms',
-    'exams'
+    'exams',
+    'assigning'
     #'schedule'
     
 
