@@ -8,7 +8,7 @@ class BlogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
        class Meta:
            model =Person
 class SelectedAdmin(admin.ModelAdmin):
-    list_display=('first_Name','room_no','date')
+    list_display=('first_Name',)
     def first_Name(self,obj):
         return obj.person.first_Name
     def room_no(self,obj):

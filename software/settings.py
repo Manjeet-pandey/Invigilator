@@ -43,10 +43,9 @@ INSTALLED_APPS = [
     #'account.apps.AccountConfig',
     'crispy_forms',
     'import_export',
-    'rooms',
-    'exams',
-    'assigning'
-    #'schedule'
+    'assigning',
+    
+    
     
 
 ]
@@ -149,4 +148,4 @@ CRISPY_TEMPLATE_PACK="bootstrap4"
 
 # LOGIN_REDIRECT_URL ='/profile_id/'
 # LOGOUT_REDIRECT_URL = '/'
-# AUTH_USER_MODEL = "page.Person"
+#AUTH_USER_MODEL = "page.Person"
