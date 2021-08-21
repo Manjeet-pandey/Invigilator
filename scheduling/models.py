@@ -39,7 +39,5 @@ class Person(models.Model):
 
 class Selected_person(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
-    exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
-    rooms_assigned = models.ForeignKey(Rooms, on_delete=models.CASCADE)
     def __str__(self):
         return self.person.first_Name

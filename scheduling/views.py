@@ -5,27 +5,16 @@ from exams.models import Exam
 from rooms.models import Rooms
 from .forms import SelectForm
 import random
-def select(response):
+def select(request,manpower):
     record = Selected_person.objects.all()
     record.delete()
-    list = Person.objects.all().order_by('?')[:10]
-    dates = Exam.objects.all()
-    kotha = Rooms.objects.all()
+    list = Person.objects.all().order_by('?')[:manpower]
     
     for items in list:
         manche = Selected_person()
         manche.person = items
-
-        for room in kotha:
-            manche.rooms_assigned = room
-        for date in dates:
-            manche.exam  = date
         manche.save()
-    
-    
-    
-    
-    return render(response, "table.html", {'list':list})
+
 
 
 
