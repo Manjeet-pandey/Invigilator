@@ -21,6 +21,7 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from scheduling import views as sc
+
 #direct implementation
 
 
@@ -30,7 +31,7 @@ urlpatterns = [
     #path('',pv.index,name='index'),
     path('admin/', admin.site.urls),
     path('index/',sc.select,name = 'index'),
-    #path('account/', include('account.urls')),
+    #path('login/', ac.login,name='login'),
     #path('profile/', include('page.urls')),
    # path('',include('page.urls')),
     #path('register/', av.register, name="register"),

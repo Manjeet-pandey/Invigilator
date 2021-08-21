@@ -1,9 +1,7 @@
 from django.http.response import HttpResponse
 from .models import Person,Selected_person
 from django.shortcuts import render
-from exams.models import Exam
-from rooms.models import Rooms
-from .forms import SelectForm
+
 import random
 def select(request,manpower):
     record = Selected_person.objects.all()
@@ -18,17 +16,17 @@ def select(request,manpower):
 
 
 
-def selected (request):
+# def selected (request):
 
-    #form to input a new student
-    form = SelectForm(request.POST or None) 
+#     #form to input a new student
+#     form = SelectForm(request.POST or None) 
 
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save() 
+#     if form.is_valid():
+#         instance = form.save(commit=False)
+#         instance.save() 
 
-    context = { 
-        "form":form
-    }
+#     context = { 
+#         "form":form
+#     }
 
-    return render(request, "table.html", context)
+#     return render(request, "table.html", context)

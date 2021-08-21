@@ -1,8 +1,21 @@
 from django.db import models
-from exams.models import Exam
-from rooms.models import Rooms
+
 from scheduling.models import Selected_person
 # Create your models here.
+
+class Exam(models.Model):
+    date = models.DateField('date')
+    level = models.CharField(max_length=15)
+    manpower = models.PositiveSmallIntegerField()
+    def __str__(self):
+        return str(self.date)
+
+class Rooms(models.Model):
+    block = models.CharField(max_length=30)
+    floor = models.CharField(max_length=30)
+    room_no = models.CharField(max_length=15)
+    def __str__(self):
+        return self.room_no
 class Selection(models.Model):
     def allpeople():
         list= Selected_person.objects.all()

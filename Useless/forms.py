@@ -3,8 +3,7 @@ from .models import Selected_person,Person
 from django.db import models
 from django import forms
 from django.forms import ModelForm,ModelChoiceField
-from exams.models import Exam
-from rooms.models import Rooms
+
 
 class SelectForm(forms.ModelForm):
     person = forms.ModelChoiceField(queryset=Person.objects.all(), initial=0)

@@ -1,8 +1,7 @@
 from django.db import models
 from django import forms
 from django.contrib.auth.models import AbstractUser,BaseUserManager
-from rooms.models import Rooms
-from exams.models import Exam
+
 class Person(models.Model):
 
     first_Name = models.CharField('first_Name',max_length=50)
@@ -10,9 +9,8 @@ class Person(models.Model):
     gender = models.CharField('gender', max_length=5,blank=False)
     age = models.CharField('age',max_length=3)
     email_Id = models.CharField('email_Id',max_length=20)
-    
     phone_Num = models.CharField('phone_Num', max_length=10,)
-    
+    #password = models.CharField('password', max_length=50)
     # photo = models.ImageField('photo', upload_to='photo_Uploads', null=True, blank=True)
     # dob = models.DateField('dob', null=True)
    # password = models.CharField('password', max_length=50)
