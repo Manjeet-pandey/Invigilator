@@ -1,6 +1,6 @@
 from import_export.admin import ImportExportModelAdmin
 from django.contrib import admin
-from .models import  Person, Selected_person
+from .models import  Notice, Person, Selected_person
     
 class BlogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
        list_display=('first_Name','last_Name','age','gender','email_Id','phone_Num')
@@ -17,4 +17,4 @@ class SelectedAdmin(admin.ModelAdmin):
         return obj.exam.date
 admin.site.register(Person, BlogAdmin)
 admin.site.register(Selected_person,SelectedAdmin)  
-
+admin.site.register(Notice)

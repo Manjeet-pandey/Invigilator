@@ -41,3 +41,7 @@ class Selected_person(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
     def __str__(self):
         return self.person.first_Name
+
+class Notice(models.Model):
+    notice_upload = models.ImageField(upload_to= 'noticeUpload/', null=True , blank=True)
+    description = models.CharField(max_length=150,null=True)

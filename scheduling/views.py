@@ -20,15 +20,5 @@ def select(request,manpower):
 
 def selected (request):
 
-    #form to input a new student
-    form = SelectForm(request.POST or None) 
+    return render(request, "notice.html",)
 
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save() 
-
-    context = { 
-        "form":form
-    }
-
-    return render(request, "table.html", context)

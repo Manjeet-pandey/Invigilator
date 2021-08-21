@@ -4,7 +4,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        top: -340px;
+        {% comment %} top: -340px; {% endcomment %}
     }
     
     .notice {
@@ -14,7 +14,7 @@
         width: 60%;
         margin-left: 220px;
         position: relative;
-        top: -340px;
+        {% comment %} top: -340px; {% endcomment %}
     }
     
     .desc {
@@ -26,9 +26,21 @@
     .desc:hover {
         border: 1px solid #777;
     }
-</style>
+{% comment %}     .firstdivision {
+        background:blue;
+    } {% endcomment %}
 
-<div>
+    .add_notice {
+        padding: 15px;
+        text-align:right;
+        align:right;
+        margin-right:370px;
+
+    }
+</style>
+<body>
+
+<div class="firstdivision">
     <h2 class="mb-4">Pulchowk Campus</h2>
 
     <div class="notice">
@@ -41,3 +53,12 @@
     </div>
 
 </div>
+
+<div class="add_notice">
+{% comment %} <button type="button">Add Notices</button> {% endcomment %}
+<form  action="{% url "index" %}" method="post" enctype="multipart/form-data">
+<input type="button"  value="Add Notice" onclick="document.getElementById('file').click();" />
+<input type="file" style="display:none;" id="file" name="file"/>
+</form>
+</div>
+</body>
