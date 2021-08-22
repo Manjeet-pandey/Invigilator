@@ -17,7 +17,6 @@ def select(request,manpower):
         manche.person = items
         manche.save()
 
-<<<<<<< HEAD
 def authenticate(username,password):
     email_Id=username
     if Person.objects.filter(email_Id=email_Id).exists():
@@ -25,15 +24,10 @@ def authenticate(username,password):
             return True
     
     
-
-
-def login(request):
-=======
 def notice(request):
     noticelist=Notice.objects.all()
     return render(request,'notice.html',{'noticelist':noticelist})
->>>>>>> bb044d077c089c929be21995c658a898d4585f63
-
+def login(request):
     form = LoginForm(request.POST)
     if request.POST:
         

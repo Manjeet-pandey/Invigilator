@@ -31,13 +31,9 @@ from assigning import views as ass
 urlpatterns = [
     #path('',pv.index,name='index'),
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
     path('index/',ass.index,name = 'index'),
     path('login/', sc.login,name='ass'),
-=======
-    path('index/',sc.notice,name = 'index'),
-    #path('login/', ac.login,name='login'),
->>>>>>> bb044d077c089c929be21995c658a898d4585f63
+    path('', sc.notice,name='notice'),
     #path('profile/', include('page.urls')),
    # path('',include('page.urls')),
     #path('register/', av.register, name="register"),

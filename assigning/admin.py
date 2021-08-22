@@ -7,20 +7,12 @@ from .models import Selection,Exam,Rooms
 # Register your models here.
 
 class AssigningAdmin(admin.ModelAdmin):
-<<<<<<< HEAD
     # list = Exam.objects.get(id=1)
     # manpower = list.manpower
     # select(request,manpower)
     list_display=['date','level','manpower']
     def rooms(self,obj):
         return obj.selected_persons.all()
-=======
-    list = Exam.objects.get(pk=2)
-    manpower = list.manpower
-    select(request,manpower)
-    list_display=['date','level','manpower']
-    """ list_filter=('date','level',) """
->>>>>>> bb044d077c089c929be21995c658a898d4585f63
     def date(self,obj):
         return obj.exam.date
     def level(self,obj):

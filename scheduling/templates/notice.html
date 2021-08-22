@@ -4,7 +4,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        {% comment %} top: -340px; {% endcomment %}
+        
     }
     
     .notice {
@@ -14,7 +14,7 @@
         width: 60%;
         margin-left: 220px;
         position: relative;
-        {% comment %} top: -340px; {% endcomment %}
+        
     }
     
     .desc {
@@ -26,14 +26,12 @@
     .desc:hover {
         border: 1px solid #777;
     }
-{% comment %}     .firstdivision {
-        background:blue;
-    } {% endcomment %}
+
 
     .add_notice {
         padding: 15px;
         text-align:right;
-        align:right;
+        
         margin-right:370px;
 
     }
@@ -49,7 +47,7 @@
             <li>
                 <div class="desc"><a href="{{item.notice_upload.url}}">{{ item.description }}</a>
                 {% comment %} <img src="item.notice_upload" height=600 width=600 id="image"></img> {% endcomment %}
-                </div>e
+                </div>
             </li>
             {%endfor%}
         </ul>
