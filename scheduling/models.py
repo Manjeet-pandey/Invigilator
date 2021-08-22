@@ -43,3 +43,5 @@ class Selected_person(models.Model):
 class Notice(models.Model):
     notice_upload = models.ImageField(upload_to= 'noticeUpload/', null=True , blank=True)
     description = models.CharField(max_length=150,null=True)
+    def __str__(self):
+        return self.description

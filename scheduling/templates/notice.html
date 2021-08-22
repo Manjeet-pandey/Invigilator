@@ -45,20 +45,16 @@
 
     <div class="notice">
         <ul style="list-style-type:none;">
-
+            {%for item in noticelist%}
             <li>
-                <div class="desc">Notice detail here</div>
+                <div class="desc"><a href="{{item.notice_upload.url}}">{{ item.description }}</a>
+                {% comment %} <img src="item.notice_upload" height=600 width=600 id="image"></img> {% endcomment %}
+                </div>e
             </li>
+            {%endfor%}
         </ul>
     </div>
 
 </div>
 
-<div class="add_notice">
-{% comment %} <button type="button">Add Notices</button> {% endcomment %}
-<form  action="{% url "index" %}" method="post" enctype="multipart/form-data">
-<input type="button"  value="Add Notice" onclick="document.getElementById('file').click();" />
-<input type="file" style="display:none;" id="file" name="file"/>
-</form>
-</div>
 </body>

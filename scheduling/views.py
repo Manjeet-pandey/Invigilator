@@ -1,5 +1,5 @@
 from django.http.response import HttpResponse
-from .models import Person,Selected_person
+from .models import Person,Selected_person,Notice
 from django.shortcuts import render
 
 import random
@@ -13,6 +13,13 @@ def select(request,manpower):
         manche.person = items
         manche.save()
 
+def notice(request):
+    noticelist=Notice.objects.all()
+    """ for items in noticelist:
+        khabar=Notice()
+        khabar.description=items
+        khabar.save() """
+    return render(request,'notice.html',{'noticelist':noticelist})
 
 
 
