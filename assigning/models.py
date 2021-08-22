@@ -8,7 +8,7 @@ class Exam(models.Model):
     level = models.CharField(max_length=15)
     manpower = models.PositiveSmallIntegerField()
     def __str__(self):
-        return str(self.date)
+        return str(self.level)
 
 class Rooms(models.Model):
     block = models.CharField(max_length=30)
@@ -16,7 +16,7 @@ class Rooms(models.Model):
     room_no = models.CharField(max_length=15)
     def __str__(self):
         return self.room_no
-class Selection(models.Model):
+class  Selection(models.Model):
     def allpeople():
         list= Selected_person.objects.all()
         return list
