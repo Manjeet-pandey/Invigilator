@@ -31,8 +31,13 @@ from assigning import views as ass
 urlpatterns = [
     #path('',pv.index,name='index'),
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('index/',ass.index,name = 'index'),
     path('login/', sc.login,name='ass'),
+=======
+    path('index/',sc.notice,name = 'index'),
+    #path('login/', ac.login,name='login'),
+>>>>>>> bb044d077c089c929be21995c658a898d4585f63
     #path('profile/', include('page.urls')),
    # path('',include('page.urls')),
     #path('register/', av.register, name="register"),
@@ -42,3 +47,7 @@ urlpatterns = [
 # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # + staticfiles_urlpatterns()   # This line is for image upload
 
 # handler404 = 'page.views.error_404_view'
+
+admin.site.site_header = "Pulchowk Campus Admin"
+#admin.site.site_title = "Admin"
+admin.site.index_title = "Pulchowk Campus Admin Portal"
