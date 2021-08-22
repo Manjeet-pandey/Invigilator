@@ -5,7 +5,13 @@ from .models import Person,Selected_person,Notice
 from django.shortcuts import render
 from .forms import LoginForm
 from django.shortcuts import render,redirect
+<<<<<<< HEAD
 from assigning.views import index
+=======
+from django.http import HttpResponseRedirect
+from django.template import RequestContext
+import random
+>>>>>>> 2928d891c531d6b63cf2f7ea1939e1311ee4158d
 
 def select(request,manpower):
     record = Selected_person.objects.all()

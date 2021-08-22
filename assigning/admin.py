@@ -4,7 +4,9 @@ from django.contrib import admin
 from django.http import request
 from scheduling.views import select
 from .models import Selection,Exam,Rooms
+from django.contrib.admin import ModelAdmin
 # Register your models here.
+
 
 class AssigningAdmin(admin.ModelAdmin):
     # list = Exam.objects.get(id=1)

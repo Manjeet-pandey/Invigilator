@@ -1,0 +1,28 @@
+<h1>Events</h1>
+
+{% for selection in selection_list %}
+
+    <strong>Date: {{selection}}</strong>
+    <ul>
+        <li>Level: {{selection.exam}}</li>
+        {% for user in selection.room_assigned.all %}
+
+            <li>Room-No: {{user}}</li>
+
+        {% endfor %} 
+        <li>Selected-Person: <br/>
+        {% for user in  selection.selected_persons.all %}
+
+             {{user}}
+             <br/>
+            </li>
+
+        {% endfor %}
+        
+
+
+
+    </ul>
+    <br/>
+
+{% endfor %}
