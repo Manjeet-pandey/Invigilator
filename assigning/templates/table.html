@@ -3,19 +3,23 @@
         <th>Field 1</th>
         <th>Field 2</th>
         <th>Field 3</th>
+        <!-- <th>Field 3</th>
         <th>Field 4</th>
         <th>Field 5</th>
-        <th>Field 6</th>
+        <th>Field 6</th> -->
     </tr>
-    {% for item in list %}
+
     <tr> 
-        <td>{{ item.first_Name }}</td>
+        <td>{{ context.exam_date }}</td>
+        <td>{{ context.exam_level }}</td>
+       
+        <td>{{ context.people}}</td>
         
-        <td>{{ item.last_Name }}</td>
+        <!-- <td>{{ item.last_Name }}</td>
         <td>{{ item.gender }}</td>
         <td>{{ item.age }}</td>
         <td>{{ item.email_Id }}</td>
-        <td>{{ item.phone_Num }}</td>
+        <td>{{ item.phone_Num }}</td> -->
     </tr>
-    {% endfor %}
+
 </table>
