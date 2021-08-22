@@ -18,7 +18,7 @@ class SelectedAdmin(admin.ModelAdmin):
     def date(self,obj):
         return obj.exam.date
 admin.site.register(Person, BlogAdmin)
-""" admin.site.register(Selected_person,SelectedAdmin)  """ 
+admin.site.register(Selected_person,SelectedAdmin)
 admin.site.register(Notice)
 
 

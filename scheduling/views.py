@@ -1,12 +1,11 @@
-from django.http.response import HttpResponse
+
+
+from assigning.models import Selection
 from .models import Person,Selected_person,Notice
 from django.shortcuts import render
 from .forms import LoginForm
 from django.shortcuts import render,redirect
-from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
-from django.template import RequestContext
-import random
+from assigning.views import index
 
 def select(request,manpower):
     record = Selected_person.objects.all()
@@ -36,7 +35,11 @@ def login(request):
 
         user = authenticate(username=username, password=password)
         if user is not None:
-                return HttpResponseRedirect('/index')
+                selected = Selection.objects.get(pk=1)
+                people = selected.selected_persons.get(person=username)
+                id = people.id
+                print(id)
+                return index(request,id)
     return render(request,'login.html')
 
 # def selected (request):

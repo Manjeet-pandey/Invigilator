@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import Selection
 # Create your views here.
-def index(request):
-    list=Selection.objects.get(id=1)
+def index(request,id):
+    list=Selection.objects.get(pk=id)
     persons= list.selected_persons.all()
     for person in persons:
        people = person.person.first_Name
