@@ -7,7 +7,7 @@ def selection(request):
     selection_list=Selection.objects.all()
     return render(request,'selection.html',
     {'selection_list':selection_list})
-from .models import Selection
+
 # Create your views here.
 def index(request):
     list=Selection.objects.get(id=1)

@@ -4,7 +4,6 @@ from django.shortcuts import render
 from .forms import LoginForm
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
 from django.template import RequestContext
 import random
 

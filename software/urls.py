@@ -34,6 +34,8 @@ urlpatterns = [
     path('index/',ass.index,name = 'index'),
     path('login/', sc.login,name='ass'),
     path('', sc.notice,name='notice'),
+    path('selection/',ass.selection),
+    
     #path('profile/', include('page.urls')),
    # path('',include('page.urls')),
     #path('register/', av.register, name="register"),
