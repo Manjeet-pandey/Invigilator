@@ -21,6 +21,7 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from scheduling import views as sc
+from assigning import views as ass
 
 #direct implementation
 
@@ -30,15 +31,19 @@ from scheduling import views as sc
 urlpatterns = [
     #path('',pv.index,name='index'),
     path('admin/', admin.site.urls),
-    path('index/',sc.select,name = 'index'),
-    #path('login/', ac.login,name='login'),
+    path('index/',ass.index,name = 'index'),
+    path('login/', sc.login,name='ass'),
+    path('', sc.notice,name='notice'),
     #path('profile/', include('page.urls')),
    # path('',include('page.urls')),
     #path('register/', av.register, name="register"),
-    path('', include("django.contrib.auth.urls")),
-    path('',include('assigning.urls')),
+    #path('', include("django.contrib.auth.urls")),
     #path('schedule/',include('schedule.urls'))
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # + staticfiles_urlpatterns()   # This line is for image upload
 
 # handler404 = 'page.views.error_404_view'
+
+admin.site.site_header = "Pulchowk Campus Admin"
+#admin.site.site_title = "Admin"
+admin.site.index_title = "Pulchowk Campus Admin Portal"

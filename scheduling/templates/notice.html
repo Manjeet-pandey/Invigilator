@@ -4,7 +4,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        {% comment %} top: -340px; {% endcomment %}
+        
     }
     
     .notice {
@@ -14,7 +14,7 @@
         width: 60%;
         margin-left: 220px;
         position: relative;
-        {% comment %} top: -340px; {% endcomment %}
+        
     }
     
     .desc {
@@ -26,14 +26,12 @@
     .desc:hover {
         border: 1px solid #777;
     }
-{% comment %}     .firstdivision {
-        background:blue;
-    } {% endcomment %}
+
 
     .add_notice {
         padding: 15px;
         text-align:right;
-        align:right;
+        
         margin-right:370px;
 
     }
@@ -45,20 +43,16 @@
 
     <div class="notice">
         <ul style="list-style-type:none;">
-
+            {%for item in noticelist%}
             <li>
-                <div class="desc">Notice detail here</div>
+                <div class="desc"><a href="{{item.notice_upload.url}}">{{ item.description }}</a>
+                {% comment %} <img src="item.notice_upload" height=600 width=600 id="image"></img> {% endcomment %}
+                </div>
             </li>
+            {%endfor%}
         </ul>
     </div>
 
 </div>
 
-<div class="add_notice">
-{% comment %} <button type="button">Add Notices</button> {% endcomment %}
-<form  action="{% url "index" %}" method="post" enctype="multipart/form-data">
-<input type="button"  value="Add Notice" onclick="document.getElementById('file').click();" />
-<input type="file" style="display:none;" id="file" name="file"/>
-</form>
-</div>
 </body>

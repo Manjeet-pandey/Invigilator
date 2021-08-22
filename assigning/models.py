@@ -24,5 +24,5 @@ class  Selection(models.Model):
     room_assigned = models.ManyToManyField(Rooms)
     selected_persons = models.ManyToManyField(Selected_person,default=allpeople)
 
-    def __str__(self) :
-        return str(self.exam.date)
+    def __str__(self):
+        return f'{self.room_assigned.all()}|-|{self.selected_persons.all()}'
