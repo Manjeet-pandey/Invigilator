@@ -15,10 +15,6 @@ def select(request,manpower):
 
 def notice(request):
     noticelist=Notice.objects.all()
-    """ for items in noticelist:
-        khabar=Notice()
-        khabar.description=items
-        khabar.save() """
     return render(request,'notice.html',{'noticelist':noticelist})
 
 

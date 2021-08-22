@@ -41,3 +41,7 @@ urlpatterns = [
 # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # + staticfiles_urlpatterns()   # This line is for image upload
 
 # handler404 = 'page.views.error_404_view'
+
+admin.site.site_header = "Pulchowk Campus Admin"
+#admin.site.site_title = "Admin"
+admin.site.index_title = "Pulchowk Campus Admin Portal"
