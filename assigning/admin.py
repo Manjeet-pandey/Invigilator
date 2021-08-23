@@ -9,9 +9,9 @@ from django.contrib.admin import ModelAdmin
 
 
 class AssigningAdmin(admin.ModelAdmin):
-    # list = Exam.objects.get(id=1)
-    # manpower = list.manpower
-    # select(request,manpower)
+    list = Exam.objects.get(id=1)
+    manpower = list.manpower
+    select(request,manpower)
     list_display=['date','level','manpower']
     def rooms(self,obj):
         return obj.selected_persons.all()

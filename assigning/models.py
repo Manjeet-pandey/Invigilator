@@ -1,6 +1,6 @@
 from django.db import models
 
-from scheduling.models import Selected_person
+from scheduling.models import Selected_person,Rooms
 # Create your models here.
 
 class Exam(models.Model):
@@ -10,12 +10,12 @@ class Exam(models.Model):
     def __str__(self):
         return str(self.level)
 
-class Rooms(models.Model):
-    block = models.CharField(max_length=30)
-    floor = models.CharField(max_length=30)
-    room_no = models.CharField(max_length=15)
-    def __str__(self):
-        return self.room_no
+# class Rooms(models.Model):
+#     block = models.CharField(max_length=30)
+#     floor = models.CharField(max_length=30)
+#     room_no = models.CharField(max_length=15)
+#     def __str__(self):
+        # return self.room_no
 class  Selection(models.Model):
     def allpeople():
         list= Selected_person.objects.all()

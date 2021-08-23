@@ -1,7 +1,12 @@
 
 from django.db import models
 from django import forms
-
+class Rooms(models.Model):
+    block = models.CharField(max_length=30)
+    floor = models.CharField(max_length=30)
+    room_no = models.CharField(max_length=15)
+    def __str__(self):
+        return self.room_no
 class Person(models.Model):
 
     first_Name = models.CharField('first_Name',max_length=50)
@@ -10,7 +15,7 @@ class Person(models.Model):
     age = models.CharField('age',max_length=3)
     email_Id = models.CharField('email_Id',max_length=20)
     phone_Num = models.CharField('phone_Num', max_length=10,)
-   
+    person_room = models.ForeignKey(Rooms, null=True, on_delete=models.CASCADE)
 #     #password = None
 #     #date_joined, gender, age, email_Id, phone_Num
    

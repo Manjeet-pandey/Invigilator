@@ -3,8 +3,9 @@ from django.contrib import admin
 from .models import  Notice, Person, Selected_person
    
 class BlogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-      #list_display=('first_name','last_name','age','gender','email_Id','phone_Num')
-       search_fields=('first_Name','last_Name','age','gender','email_Id','phone_Num')
+       list_display=('first_Name','last_Name','age','gender','email_Id','phone_Num','person_room')
+       search_fields=('first_Name','last_Name','age','gender','email_Id','phone_Num','person_room')
+       list_filter = ('person_room',)
         #id, password, last_login, is_superuser, groups, user_permissions, email, first_name, last_name, is_staff, is_active, date_joined
        class Meta:
            model =Person
