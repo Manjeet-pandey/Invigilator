@@ -5,11 +5,15 @@ from django.http import request
 from scheduling.views import select
 from .models import Selection,Exam,Rooms
 from django.contrib.admin import ModelAdmin
+from .views import send
 # Register your models here.
 
-
+exams = Exam.objects.last()
+exam_Id = exams.id
 class AssigningAdmin(admin.ModelAdmin):
-    list = Exam.objects.get(id=1)
+    exams = Exam.objects.last()
+    exam_Id = exams.id
+    list = Exam.objects.get(id=exam_Id)
     manpower = list.manpower
     select(request,manpower)
     list_display=['date','level','manpower']
@@ -28,6 +32,7 @@ class AssigningAdmin(admin.ModelAdmin):
     def save_related(self, request, form, formsets, change):
         
         form.save_m2m()
+        send(request,exam_Id)
         for formset in formsets:
             self.save_formset(request, form, formset, change=change)
     

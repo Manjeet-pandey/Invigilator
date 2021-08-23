@@ -1,7 +1,7 @@
 from django.db import models
 
 from scheduling.models import Selected_person,Rooms
-# Create your models here.
+# Create your models he
 
 class Exam(models.Model):
     date = models.DateField('date')

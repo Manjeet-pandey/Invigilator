@@ -34,7 +34,7 @@ def select(request,manpower):
             manche.person = people
             manche.person.save()
             manche.save()
-            print(manche.person.person_room)
+            #print(manche.person.person_room)
     
 def authenticate(username,password):
     email_Id=username
