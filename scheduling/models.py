@@ -11,10 +11,10 @@ class Person(models.Model):
 
     first_Name = models.CharField('first_Name',max_length=50)
     last_Name = models.CharField('last_Name', max_length=50)
-    gender = models.CharField('gender', max_length=5,blank=False)
+    gender = models.CharField('gender', max_length=50,blank=False)
     age = models.CharField('age',max_length=3)
-    email_Id = models.CharField('email_Id',max_length=20)
-    phone_Num = models.CharField('phone_Num', max_length=10,)
+    email_Id = models.CharField('email_Id',max_length=50)
+    phone_Num = models.CharField('phone_Num', max_length=100)
     person_room = models.ForeignKey(Rooms, null=True, on_delete=models.CASCADE)
 #     #password = None
 #     #date_joined, gender, age, email_Id, phone_Num

@@ -24,7 +24,7 @@ def select(request,manpower):
     total_rooms = len(Rooms.objects.all())
     total_selected_persons = list.count()
     group_size = int(int(total_selected_persons/total_rooms)+0.5)
-
+   
     for people_group, room in zip(grouped(list, group_size),Rooms.objects.all()):
         # print(people_group)
         for people in people_group:
