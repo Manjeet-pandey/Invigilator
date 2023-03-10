@@ -8,31 +8,49 @@ from django.contrib.admin import ModelAdmin
 from .views import send
 # Register your models here.
 
-exams = Exam.objects.last()
-exam_Id = exams.id
+
+
 class AssigningAdmin(admin.ModelAdmin):
-    exams = Exam.objects.last()
-    exam_Id = exams.id
-    list = Exam.objects.get(id=exam_Id)
-    manpower = list.manpower
-    select(request,manpower)
-    list_display=['date','level','manpower']
+    def get_last_exam(self):
+        last_exam = Exam.objects.last()
+        if last_exam is None:
+            return None
+        else:
+            return last_exam.id
+
+    def get_list_display(self, request):
+        exam_id = self.get_last_exam()
+        if exam_id is not None:
+            list = Exam.objects.get(id=exam_id)
+            manpower = list.manpower
+            select(request,manpower)
+
+        return ['date','level','manpower']
+
     def rooms(self,obj):
         return obj.selected_persons.all()
+
     def date(self,obj):
         return obj.exam.date
+
     def level(self,obj):
         return obj.exam.level
+
     def manpower(self,obj):
         return obj.exam.manpower
+
     def block(self,obj):
         return obj.room_assigned.block
+
+
+
+
     
     
     def save_related(self, request, form, formsets, change):
         
         form.save_m2m()
-        send(request,exam_Id)
+        send(request,exam_id)
         for formset in formsets:
             self.save_formset(request, form, formset, change=change)
     
